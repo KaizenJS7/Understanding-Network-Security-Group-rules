@@ -144,7 +144,5 @@
 <img src="https://i.imgur.com/QkgW1x4.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br /> 
 
-5. Now type Delete to confirm deletion and confrim deletion.
-
 <img src="https://i.imgur.com/0ZGnrx6.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />    
