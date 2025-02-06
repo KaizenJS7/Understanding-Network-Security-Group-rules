@@ -1,144 +1,142 @@
 # Understanding-Network-Security-Group-rules
 
-<h2>Task 1: Create a virtual machine</h2>
+<h2>Task 1: Creating a Virtual Machine</h2>
 
-1. in the search box at the top of the Azure Portal, enter <b>Viryual machine</b>. Select <b>Virtual machines</b> from the search results.
+1. First, I navigate to the Azure Portal. In the search box at the top, I type <b>Virtual machine</b> and select <b>Virtual machines</b> from the search results.
 
  <img src="https://i.imgur.com/xL2tWVW.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 
-2. In <b>Virtual machines</b> section, select <b>+ Create > Azure virtual machine</b>.
+2. In <b>Virtual machines</b> section, I click on <b>+ Create > Azure virtual machine</b>.
 
  <img src="https://i.imgur.com/xtJTqql.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 
-3. In the <b>Create a virtual machine</b> tab, enter or select the following values in the <b>Basics</b> tab.
-- Resource group: Select a resource group
+3. On the <b>Create a virtual machine</b> tab, I fill in the requiered details inder the <b>Basics</b> tab.
+- Resource group: I select an existing resource group or create a new one.
 - Instance details:
-   - Virtual machine Name: Enter the name of VM
-   - Region: Select prefered region
-   - Availability options: Select <b>No infrastructure redundancy required</b> & <b>Standard as Security type</b>.
-   - Image : Select  <b>Windows Server 2022 Datacenter - Azure Edition - Gen2</b>.
-   -  Azure Spot instance : Leave the default of unchecked.
-   -  Size : Click on <b>see all sizes</b> then select <b>B2s</b> and then click on <b>select</b>.
+   - Virtual machine Name: I enter a name for my VM.
+   - Region: I choose my preferred region.
+   - Availability options: I select <b>No infrastructure redundancy required</b> & <b>Standard</b> as the Security type.
+   - Image : I select  <b>Windows Server 2022 Datacenter - Azure Edition - Gen2</b>.
+   -  Azure Spot instance : I leave it unchecked.
+   -  Size : I click on <b>see all sizes</b>, select <b>B2s</b> and then click <b>select</b>.
 - Administrator Account:
-   - Username: Enter a username
-   - Password: Enter a password
-   - Confirm Password: Re-enter password
+   - Username: I enter a username
+   - Password: I enter a password
+   - Confirm Password: I re-enter the password
  - Inbound Port rules:
-   - Public inbound ports: Select <b>None</b>
-   - Click on <b>Next:Disks</b>. Select <b>Standard SSD</b> in OS Disk types.
+   - Public inbound ports: I select <b>None</b>
+   - I then click <b>Next:Disks</b> and select <b>Standard SSD</b> for the OS Disk type.
   
  <img src="https://i.imgur.com/eWv1Gbl.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 
-3. Leave the defaults on <b>Networking</b> and <b>Management</b> tabs, go to the <b>Monitoring</b> tab and <b>Disable</b> the <b>Boot diagnostics</b>.
+4. I leave the default settings in the <b>Networking</b> and <b>Management</b> tabs. In the <b>Monitoring</b> tab, I <b>Disable</b> <b>Boot diagnostics</b>.
 
  <img src="https://i.imgur.com/tACGh3C.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 
-4. Select the <b>Review + create button</b> at the bottom of the page and then click on <b>Create</b>. After a few minutes, the VM will be deployed.
+5. I click on <b>Review + create button</b> and then <b>Create</b>. After a few minutes, the VM is deployed.
 
 <img src="https://i.imgur.com/TDUCgoE.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 
-<h1>Task 2: Allow RDP traffic via NSG rules</h1>
+<h1>Task 2: Allowing RDP traffic via NSG Rules</h1>
 
-1. In the search box at the top of the Azure portal page, enter <b>Virtual machine</b>. Select Virtual Machines in the search results. Select the virtual machine you created “<b>myWhizlabsVM1</b>".
-2. On the <b>Overview</b> page of your VM, go to the <b>Networking</b> section from left menu & select Network settings. Here you can see the network interface which has the public ip address and the private ip address and also the inbound and outbound port rules.
-3. Click on <b>+ Create port rule</b>. Select <b>Inbound Port</b> rule and enter or select the following information:
+1. I go to the Azure Portal and search for <b>Virtual Machines</b>. Then, I select my virtual machine, "<b>myWhizlabsVM1</b>".
+2. In the <b>Overview</b> section, I click on <b>Networking</b>. Here, i can see the network interface, public and private IP addresses, and the inbound/outbound port rules.
+3. I click on <b>+ Create port rule</b>, select <b>Inbound Port</b> rule, and enter the following details:
 
 <img src="https://i.imgur.com/XufNupp.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 
-   - Source: Select <b>Service Tag</b>
-   - Source service tag: Select <b>Internet</b>
-   - Destination: Select <b>Any</b>
-   - Service: Select <b>RDP</b>
-   - Action: Select <b>Allow</b>
-   - Priority: Enter <b>100</b>
-   - Name: Enter <b>myport_3389</b>
+   - Source: <b>Service Tag</b>
+   - Source service tag: <b>Internet</b>
+   - Destination: <b>Any</b>
+   - Service: <b>RDP</b>
+   - Action: <b>Allow</b>
+   - Priority: <b>100</b>
+   - Name: <b>myport_3389</b>
 
 <img src="https://i.imgur.com/VrNLkXO.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br /> 
 
-4. Click on the <b>Add button</b>. Now, the security rule will be created which will ensure that we can connect on port 3389 to the virtual machine.
+4. I click <b>Add</b>, creating the security rule for RDP access on port 3389.
 
 <img src="https://i.imgur.com/TGgBib4.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br /> 
 
-5. Now, let’s try to connect the virtual machine. Go to the overview section and click on the <b></b>Connect > RDP</b> button on the overview page. Then, click on the <b>Download RDP</b> file option.
-6. Open the downloaded RDP file, you will be asked to enter the <b>username</b> and </b>password</b> for the Remote Desktop Connection.
+5. To connect to my VM, I go to overview and click <b></b>Connect > RDP</b>, then <b>Download RDP File</b>.
+6. I open the downloaded RDP file, enter my creddentials, and click <b>Ok</b> to connect.
 
 <img src="https://i.imgur.com/ON3LwFb.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br /> 
 
-7. Click <b>OK</b>. You will now be connected to your Virtual machine.
+<h1>Task 4: Allowing HTTP Traffic via NSG Rules</h1>
 
-<h1>Task 4: Allow HTTP traffic via NSG rules</h1>
-
-1. In the <b>Windows virtual machine</b>, open the <b>Server Manager</b> and click on <b>Add Roles and Features</b>. We will now install a web server on this particular machine by adding a network security group rule to allow traffic to flow into this virtual machine on Port 80 so that we can access the web server.
+1. Inside the <b>Windows VM</b>, I open <b>Server Manager</b> and select <b>Add Roles and Features</b>.
 
 <img src="https://i.imgur.com/gzZ2uQK.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br /> 
 
-2. Click on <b>Next</b> until you get an option to select <b>Web Server (IIS)</b>. Then, again click on <b>Next</b> until you get an option to install.
+2. I click <b>Next</b> until I can select <b>Web Server (IIS)</b>. I continue clicking <b>Next</b> until I reach the installation page.
 
 <img src="https://i.imgur.com/uHNd8KO.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br /> 
 
-3.  Click on <b>Install</b>. Once the installation is complete, click on <b>Close</b>.
-4.  Open <b>Microsoft edge</b> web browser on the windows VM and enter <b>http://localhost/</b> in the search bar to confirm that Internet Information Services (IIS) is installed on the machine.
+3.  Once the installation completes, I click <b>Close</b> and open Microsoft Edge.
+4.  In the browser I type <b>http://localhost/</b> to confrim ISS is installed.
 
 <img src="https://i.imgur.com/PKt51uC.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br /> 
 
-5. Now, return to the Azure portal. In the <b>Networking</b> section of the virtual machine “<b>myWhizlabsVM1</b>”, select <b>+ Create port rule</b> and <b>Inbound Port rule</b> option. Enter or select the following information.
+5. Back in the Azure Portal, I go to <b>Networking</b> for my VM and click <b>+ Create port rule</b> and <b>Inbound Port rule</b> option.
 
-   - Source : Select <b>Service Tag</b>
-   - Source service tag : Select <b>Internet</b>
-   - Destination : Select <b>Any</b>
-   - Destination port ranges : Select <b>80</b> for HTTP
+   - Source : <b>Service Tag</b>
+   - Source service tag : <b>Internet</b>
+   - Destination : <b>Any</b>
+   - Destination port ranges : <b>80</b> (HTTP)
    - Action : <b>Allow</b>
    - Priority : Enter <b>110</b>
-   - Name : Enter <b>myport_80</b>
+   - Name : <b>myport_80</b>
 
  <img src="https://i.imgur.com/sbzrPKW.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br /> 
 
-6. Click on the <b>Add</b> button. Now, the security rule will be created.
+6. I click <b>Add</b>, allowing traffic through port 80.
 
  <img src="https://i.imgur.com/WDUJCQa.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br /> 
 
-7. In the <b>networking</b> section, you will find the <b>public IP address</b>. Copy the public IP.
+7. In the <b>networking</b> section, I copy the <b>Public IP address</b>.
 
  <img src="https://i.imgur.com/Oforjri.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br /> 
 
-8. Now, paste the public IP on your web browser. You will see the page displaying Internet Information Services.
+8. I paste the public IP into a web browser, and the ISS default page appears, confriming successful configuration.
 
 <img src="https://i.imgur.com/1GlJvOf.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br /> 
 
-<h1>Task 6: Deleting the resources</h1>
+<h1>Task 6: Deleting the Resources</h1>
 
-1. In the search box at the top of the Azure portal, enter <b>Resource Groups</b>. Select Resource groups from the results.
+1. In the Azure Portal, I search for <b>Resource Groups</b> and select my resource group.
 
 <img src="https://i.imgur.com/vpjZEV1.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br /> 
 
-2. Click on the name of the resource group.
+2. I select all the resources by clicking the <b>Name checkbox</b>.
 
 <img src="https://i.imgur.com/Bo1MFoR.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br /> 
 
-3. Select all the resources in that Resource group by clicking on the <b>Name checkbox</b>.
+3. I click the three-dot menu and choose <b>Delete</b>.
 
 <img src="https://i.imgur.com/jEYpAZD.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br /> 
 
-4. Go to the three dots on right and click <b>Delete</b>.
+4. I type <b>Delete</b> to confrim and finalize the deletion.
 
 <img src="https://i.imgur.com/gJBjP3K.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br /> 
