@@ -12,7 +12,7 @@
  <img src="https://i.imgur.com/xtJTqql.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 
-3. On the <b>Create a virtual machine</b> tab, I fill in the requiered details inder the <b>Basics</b> tab.
+3. On the <b>Create a virtual machine</b> tab, I fill in the requiered details under the <b>Basics</b> tab.
 - Resource group: I select an existing resource group or create a new one.
 - Instance details:
    - Virtual machine Name: I enter a name for my VM.
