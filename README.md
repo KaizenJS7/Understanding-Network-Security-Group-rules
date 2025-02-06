@@ -126,25 +126,25 @@
 <img src="https://i.imgur.com/vpjZEV1.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br /> 
 
-2. I select all the resources by clicking the <b>Name checkbox</b>.
-
 <img src="https://i.imgur.com/Bo1MFoR.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br /> 
 
-3. I click the three-dot menu and choose <b>Delete</b>.
+2. I select all the resources by clicking the <b>Name checkbox</b>.
 
 <img src="https://i.imgur.com/jEYpAZD.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br /> 
 
-4. I type <b>Delete</b> to confrim and finalize the deletion.
+3. I click the three-dot menu and choose <b>Delete</b>.
 
 <img src="https://i.imgur.com/gJBjP3K.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br /> 
 
-5. Now type Delete to confirm deletion and confrim deletion.
+4. I type <b>Delete</b> to confrim and finalize the deletion.
 
 <img src="https://i.imgur.com/QkgW1x4.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br /> 
+
+5. Now type Delete to confirm deletion and confrim deletion.
 
 <img src="https://i.imgur.com/0ZGnrx6.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />    
