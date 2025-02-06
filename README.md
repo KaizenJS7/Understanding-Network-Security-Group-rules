@@ -98,7 +98,7 @@
    - Destination : <b>Any</b>
    - Destination port ranges : <b>80</b> (HTTP)
    - Action : <b>Allow</b>
-   - Priority : Enter <b>110</b>
+   - Priority : <b>110</b>
    - Name : <b>myport_80</b>
 
  <img src="https://i.imgur.com/sbzrPKW.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
