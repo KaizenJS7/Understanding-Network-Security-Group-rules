@@ -67,7 +67,7 @@
 <img src="https://i.imgur.com/TGgBib4.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br /> 
 
-5. To connect to my VM, I go to overview and click <b></b>Connect > RDP</b>, then <b>Download RDP File</b>.
+5. To connect to my VM, I go to overview and click <b>Connect > RDP</b>, then <b>Download RDP File</b>.
 6. I open the downloaded RDP file, enter my creddentials, and click <b>Ok</b> to connect.
 
 <img src="https://i.imgur.com/ON3LwFb.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
